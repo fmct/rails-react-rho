@@ -6996,3 +6996,38 @@ Processing by StaticController#index as HTML
 Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 3789)
 
 
+Started GET "/sports/100/events/1115745600" for 127.0.0.1 at 2019-09-30 21:52:01 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StaticController#index as HTML
+  Parameters: {"contraints"=>#<Proc:0x0000559d0d2743e0@/home/filipe/rails-react-rho/config/routes.rb:7 (lambda)>, "page"=>"sports/100/events/1115745600"}
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 285)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /home/filipe/rails-react-rho/public/packs
+Completed 200 OK in 10898ms (Views: 10892.4ms | ActiveRecord: 0.0ms | Allocations: 1557240)
+
+
+Started GET "/sports/100" for 127.0.0.1 at 2019-09-30 21:52:17 +0100
+Processing by StaticController#index as HTML
+  Parameters: {"contraints"=>#<Proc:0x0000559d0d2743e0@/home/filipe/rails-react-rho/config/routes.rb:7 (lambda)>, "page"=>"sports/100"}
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 64)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 3802)
+
+
+Started GET "/sports/100/events" for 127.0.0.1 at 2019-09-30 21:52:22 +0100
+Processing by StaticController#index as HTML
+  Parameters: {"contraints"=>#<Proc:0x0000559d0d2743e0@/home/filipe/rails-react-rho/config/routes.rb:7 (lambda)>, "page"=>"sports/100/events"}
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 64)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 3796)
+
+
+Started GET "/sports/100/events/1" for 127.0.0.1 at 2019-09-30 21:52:25 +0100
+Processing by StaticController#index as HTML
+  Parameters: {"contraints"=>#<Proc:0x0000559d0d2743e0@/home/filipe/rails-react-rho/config/routes.rb:7 (lambda)>, "page"=>"sports/100/events/1"}
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 64)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 3802)
+
+
