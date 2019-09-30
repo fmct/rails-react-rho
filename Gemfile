@@ -56,5 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #Webpack and react
 gem 'react-rails'
 
+gem 'therubyracer'
+
 #json
 gem 'json'
