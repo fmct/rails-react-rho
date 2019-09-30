@@ -7,9 +7,9 @@ import Sports from "./Sports"
 import Events from "./Events"
 import Outcomes from "./Outcomes"
 
-let sportId = ""
+let sportId = " "
 
-let outcomeId = ""
+let eventId = " "
 
 class App extends React.Component {
 
@@ -18,17 +18,17 @@ class App extends React.Component {
     return sportId
   }
   eventCallback(dataFromChild) {
-    outcomeId = dataFromChild
-    console.log(outcomeId)
-    return outcomeId
+    eventId = dataFromChild
+    console.log(eventId)
+    return eventId
   }
   render () {
     return (
 		<BrowserRouter>
 			<Switch>
-				<Route exact path="/" render={() => ("Home!")} />      
-      	<Route path="/hello" render={() => <HelloWorld greeting="friend, go to "/>} />
-        <Route path="/sports/*/events/*" render={() => <Outcomes test2={outcomeId}/>} /> 
+
+        <Route exact path="/" render={() => <HelloWorld greeting="friend, go to "/>} />     
+        <Route path="/sports/*/events/*" render={() => <Outcomes test2={eventId} spId={sportId}/>} /> 
         <Route path="/sports/*" render={() => <Events test={sportId} callbackFromParent2={this.eventCallback}/>} /> 
         <Route path="/sports" render={() => <Sports callbackFromParent={this.myCallback}/>} />  
     	</Switch>

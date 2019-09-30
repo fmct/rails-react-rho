@@ -4,26 +4,22 @@ import PropTypes from "prop-types"
 const json = require('./overview.json');
 let rows = []
 const url = window.location.href;
-const eventId = url.split("/",5)[4]
-
-
+const sportId = url.split("/",5)[4]
 
 
 class Outcomes extends React.Component {
-
-
   createList() {  
     rows = []
     for (let i = 0; i < json['sports'].length; i++) {
-      if (json['sports'][i]['id'] == parseInt(eventId)){
+      if (json['sports'][i]['id'] == parseInt(sportId) && this.props.spId == " " 
+        || json['sports'][i]['id'] == this.props.spId){
         const comps = json['sports'][i]['comp']
         for (let comp = 0; comp < comps.length; comp++) {
           const events = comps[comp]['events']
           for (let event = 0; event < events.length; event++) {
             const urlSplit = url.split("/",7)
-            console.log(parseInt(urlSplit[6]))
-            if (events[event]['id'] == parseInt(this.props.test2) && this.props.test2 != ""
-              || events[event]['id'] == parseInt(urlSplit[6]) && this.props.test2 == ""){
+            if (events[event]['id'] == this.props.test2 
+              || events[event]['id'] == parseInt(urlSplit[6]) && this.props.test2 == " "){
               const firstTeamName = events[event]['oppADesc']
               const firstTeamScore = events[event]['scoreboard']['scrA']
               const secondTeamName = events[event]['oppBDesc']
