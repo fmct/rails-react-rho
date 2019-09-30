@@ -19,7 +19,7 @@ class Sports extends React.Component {
     rows = []
     for (let i = 0; i < json['slider_elements'].length; i++) {
     rows.push(<div key={i} > <h3> {json['slider_elements'][i]['desc']} </h3>
-      <a href={"/sport/" + json['slider_elements'][i]['id']} 
+      <a href={"/sports/" + json['slider_elements'][i]['id']} 
       className='goToEvents' onClick={() => {this.handleClick(json['slider_elements'][i]['id'])}}> events </a>
      </div>);
     }

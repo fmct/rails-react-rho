@@ -12,13 +12,13 @@ const url = window.location.href;
 let rows = []
 
 class Events extends React.Component {
-  reqListener(e) {
-    console.log(json['slider_elements'][0]);
-  } 
+  handleClick(a){
+    this.props.callbackFromParent2(a)
+  }
   createEvents()  {
     rows = []
     for (let i = 0; i < json['sports'].length; i++) {
-      const urlId = url.split("/")
+      const urlId = url.split("/",5)
       if (json['sports'][i]['id'] == this.props.test && this.props.test != "" 
         || json['sports'][i]['id'] == parseInt(urlId[4]) && this.props.test == ""){
         if (json['sports'][i]['comp'].length != 0){
@@ -30,11 +30,14 @@ class Events extends React.Component {
             for(let event = 0; event < events.length; event++){
               let next_url = ""
               if(json['sports'][i]['id'] == this.props.test && this.props.test != ""){
-                  next_url = url + "/" + this.props.test + "/events/" + events[event]['id']
+                next_url = url + "/" + this.props.test + "/events/" + events[event]['id']
+              }
+              else if(json['sports'][i]['id'] == parseInt(urlId[4]) && this.props.test == ""){
+                next_url = url + "/events/" + events[event]['id']
               }
               rows.push(<div key={events[event]['id']} > <p> {events[event]['desc']} </p> 
                 
-                <a href={next_url} key={i + events[event]['id']} className='getThingsBtn' onClick={() => {}}> outcomes </a>
+                <a href={next_url} key={i + events[event]['id']} className='getThingsBtn' onClick={() => {this.handleClick(events[event]['id'])}}> outcomes </a>
               </div>);
             }
           }

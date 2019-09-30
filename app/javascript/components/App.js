@@ -9,7 +9,7 @@ import Outcomes from "./Outcomes"
 
 let sportId = ""
 
-let outcomeId = " "
+let outcomeId = ""
 
 class App extends React.Component {
 
@@ -17,14 +17,19 @@ class App extends React.Component {
     sportId = dataFromChild
     return sportId
   }
+  eventCallback(dataFromChild) {
+    outcomeId = dataFromChild
+    console.log(outcomeId)
+    return outcomeId
+  }
   render () {
     return (
 		<BrowserRouter>
 			<Switch>
 				<Route exact path="/" render={() => ("Home!")} />      
       	<Route path="/hello" render={() => <HelloWorld greeting="friend, go to "/>} />
-        <Route path="/sport/*/events/*" render={() => <Outcomes />} /> 
-        <Route path="/sport/*" render={() => <Events test={sportId} />} /> 
+        <Route path="/sports/*/events/*" render={() => <Outcomes test2={outcomeId}/>} /> 
+        <Route path="/sports/*" render={() => <Events test={sportId} callbackFromParent2={this.eventCallback}/>} /> 
         <Route path="/sports" render={() => <Sports callbackFromParent={this.myCallback}/>} />  
     	</Switch>
     </BrowserRouter>
